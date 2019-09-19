@@ -1,7 +1,7 @@
 .navbar{
     list-style: none;
     background-image: linear-gradient(to bottom right, lightslategray, darkslategray);
-    width: 150px;
+    width: 135px;
     overflow: hidden;
     padding: 0;
 }
@@ -13,7 +13,7 @@
     display: inline-block;
 }
 .navbar div{
-    width: 150px;
+    width: 135px;
 }
 .navbar li:hover{
     background-color: slategray;
@@ -34,5 +34,7 @@
 }
 
 .header{
-    
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 
 }

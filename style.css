@@ -1,3 +1,11 @@
+html, body{
+    height: 100%;
+}
+
+body{
+    background-image: linear-gradient(to bottom, yellow, orangered 50%);
+}
+
 .navbar{
     list-style: none;
     background-image: linear-gradient(to bottom right, lightslategray, darkslategray);
@@ -36,5 +44,5 @@
 .header{
     text-align: center;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 
+    font-size: 64px;
 }

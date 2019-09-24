@@ -9,8 +9,9 @@ body{
 .navbar{
     list-style: none;
     background-image: linear-gradient(to bottom right, lightslategray, darkslategray);
-    width: 135px;
+    width: 132px;
     overflow: hidden;
+    float: left;
     padding: 0;
 }
 .navbar a, .dropdown div{
@@ -41,8 +42,24 @@ body{
     background-image: linear-gradient(to right, gray, dimgray)
 }
 
-.header{
-    text-align: center;
+#header{
+    text-align: left;
+    padding-left: 45.5%;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 64px;
+    margin-top: 0;
+}
+#header1{
+    text-align: left;
+    padding-left: 42.5%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 64px;
+    margin-top: 0;
+}
+#header2{
+    text-align: left;
+    padding-left: 43.5%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 64px;
+    margin-top: 0;
 }

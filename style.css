@@ -19,9 +19,11 @@ body{
     font-size: 24px;
     padding: 16px;
     display: inline-block;
+}
+.navbar li{
     float: left;
 }
-.navbar li:hover{
+.navbar a:hover, .navbar div:hover{
     background-color: slategray;
 }
 .dropdown-content{
@@ -30,7 +32,10 @@ body{
     display: none;
     position: absolute;
     z-index: 2;
-    background-image: linear-gradient(to bottom right, lightslategray, darkslategray);
+    background-image: linear-gradient(to bottom right, slategray, darkslategray);
+}
+.dropdown-content li{
+    float: none;
 }
 .dropdown:hover .dropdown-content{
     display: block;
@@ -40,8 +45,8 @@ body{
 }
 
 .header{
-    text-align: center;
+    text-align: left;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 64px;
+    font-size: 56px;
     margin-top: 0;
 }

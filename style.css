@@ -50,3 +50,13 @@ body{
     font-size: 56px;
     margin-top: 0;
 }
+.generic{
+    text-align: left;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 32px;
+}
+.caption{
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 32px;
+}

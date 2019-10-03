@@ -1,3 +1,11 @@
+h1, p{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin: 0;
+}
+hr{
+
+}
+
 html, body{
     height: 100%;
 }
@@ -44,18 +52,12 @@ body{
     background-image: linear-gradient(to right, gray, dimgray)
 }
 
-.header{
-    text-align: left;
+.page_header{
+    text-align: center;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 56px;
-    margin-top: 0;
 }
-.generic{
-    text-align: left;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 32px;
-}
-.caption{
+.generic, .caption{
     text-align: center;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 32px;

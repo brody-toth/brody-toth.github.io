@@ -4,6 +4,35 @@
   <head>
     <title>Text Adventure</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+
+    <style>
+        #container{
+            position:absolute;
+            top:75px;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            background-color:green;
+        }
+
+        #leftpane{
+            width:56%;
+            height:100%;
+            float:left;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background-color:red;
+        }
+
+        #rightpane{
+            width:44%;
+            height:100%;
+            float:left;
+            background-color:blue;
+        }
+    </style>
+
   </head>
 
   <body>
@@ -23,8 +52,13 @@
       </li>
     </ul>
 
-    <h1 class="page_header">Text Adventure</h1>
-    <p class="generic">In progress!</P>
+    <div id="container">
+        <div id="leftpane">
+        </div>
+
+        <div id="rightpane">
+        </div>
+    </div>
 
   </body>
 

@@ -12,7 +12,7 @@
             bottom:0px;
             left:0px;
             right:0px;
-            background-color:green;
+            background-color:dimgray;
         }
 
         #leftpane{
@@ -22,14 +22,12 @@
             display:flex;
             align-items:center;
             justify-content:center;
-            background-color:red;
         }
 
         #rightpane{
             width:44%;
             height:100%;
             float:left;
-            background-color:blue;
         }
 
         #storytext{
@@ -38,10 +36,15 @@
             top:0px;
             left:56%;
             right:0px;
-            display:flex;
             align-items:center;
             justify-content:center;
-            background-color:pink;
+            padding:8px;
+        }
+
+        #storyimg{
+            max-height:97%;
+            max-width:97%;
+            width:97%;
         }
 
         #choices{
@@ -53,10 +56,9 @@
             display:flex;
             align-items:center;
             justify-content:center;
-            background-color:rebeccapurple;
         }
 
-        #b1,#b2,#b3,#b4{
+        #button1,#button2,#button3,#button4{
             display:inline-block;
             background-color:orange;
             color:black;
@@ -103,20 +105,60 @@
 
     <div id="container">
         <div id="leftpane">
+            <img id="storyimg" src="images/stickman.png">
         </div>
 
         <div id="rightpane">
             <div id="storytext">
+                <p id="ptext1">y</p>
+                <p id="ptext2">ye</p>
+                <p id="ptext3">yee</p>
+                <p id="ptext4">yeet</p>
+                <p id="ptext5">yee</p>
+                <p id="ptext6">ye</p>
+                <p id="ptext7">y</p>
             </div>
             <div id="choices">
-                <a id="b1" href="#">Choice 1</a>
-                <a id="b2" href="#">Choice 2</a>
-                <a id="b3" href="#">Choice 3</a>
-                <a id="b4" href="#">Choice 4</a>
+                <a id="button1" href="#">Choice 1</a>
+                <a id="button2" href="#">Choice 2</a>
+                <a id="button3" href="#">Choice 3</a>
+                <a id="button4" href="#">Choice 4</a>
             </div>
         </div>
     </div>
 
+    <script>
+        var pic = document.getElementById("storyimg");
+        var ptxt1 = document.getElementById("ptext1");
+        var ptxt2 = document.getElementById("ptext2");
+        var ptxt3 = document.getElementById("ptext3");
+        var ptxt4 = document.getElementById("ptext4");
+        var b1 = document.getElementById("button1");
+        var b2 = document.getElementById("button2");
+        var b3 = document.getElementById("button3");
+        var b4 = document.getElementById("button4");
+
+        function intro(){
+            pic.src = "images/stickman.png";
+            ptxt1.innerHTML("intro intro intro intro");
+            ptxt2.innerHTML("");
+            ptxt2.innerHTML("");
+            ptxt2.innerHTML("");
+            b1.innerHTML("Yes");
+            b2.innerHTML("No");
+            b1.style.display = block;
+            b2.style.display = block;
+            b3.style.display = none;
+            b4.style.display = none;
+        }
+        function woods(){
+        }
+        function mountain(){
+        }
+        function temple(){
+
+        }
+    </script>
   </body>
 
 </html>

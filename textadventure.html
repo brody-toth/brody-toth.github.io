@@ -119,6 +119,7 @@
         var b3 = document.getElementById("button3");
         var b4 = document.getElementById("button4");
         var isSamurai = false;
+        var declined = false;
         var manSpared = true;
         var beenToMountain = false;
         var beenToTemple = false;
@@ -144,7 +145,8 @@
         }
         function startGame(){
             isSamurai = false;
-            manSpared = true;
+            declined = false;
+            manSpared = false;
             beenToMountain = false;
             beenToTemple = false;
             travelersSaved = false;
@@ -239,9 +241,9 @@
             b2.style.display = "none";
             b3.style.display = "none";
             b4.style.display = "none";
-            //leftSide();
         }
         function bribeMan(){
+            manSpared = true;
             pic.src = "";
             ptxt1.innerHTML = "";
             ptxt2.innerHTML = "";
@@ -252,17 +254,42 @@
             b2.style.display = "none";
             b3.style.display = "none";
             b4.style.display = "none";
-            //forest();
         }
         function threatenMan1(){
-            //game over
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
         function threatenMan2(){
+            manSpared = true;
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
 
         function forest(){
             pic.src = "";
-            ptxt1.innerHTML = "";
+            if (capturedNum == 0){
+                ptxt1.innerHTML = "";
+            }
+            else if (capturedNum > 0){
+                ptxt1.innerHTML = "";
+            }
             ptxt2.innerHTML = "";
             ptxt3.innerHTML = "";
             ptxt4.innerHTML = "";
@@ -273,19 +300,187 @@
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
-            b4.style.display = "block";
+            if (beenToMountain && beenToTemple){
+                b4.style.display = "block";
+            }
+            else if (!beenToMountain || !beenToTemple){
+                b4.style.display = "none";
+            }
         }
         function fellTower(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Break Window";
+            b2.innerHTML = "Knock on Door";
+            b3.innerHTML = "Use Key";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            if (hasKey){
+                b3.style.display = "block";
+            }
+            else if (!hasKey){
+                b3.style.display = "none";
+            }
+            b4.style.display = "none";
+        }
+        function breakWindow(){
+        }
+        function knockDoor(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function useKey(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function fightLeader(){
         }
         function burnTower(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Break Window";
+            b2.innerHTML = "Knock on Door";
+            b3.innerHTML = "Use Key";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            if (hasKey){
+                b3.style.display = "block";
+            }
+            else if (!hasKey){
+                b3.style.display = "none";
+            }
+            b4.style.display = "none";
         }
         function wait(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Sword";
+            b2.innerHTML = "Convince Guard";
+            b3.innerHTML = "Sneak Through Window";
+            if (isSamurai){
+                b1.style.display = "block";
+            }
+            else if (!isSamurai){
+                b1.style.display = "block";
+            }
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+        }
+        function houseGuard(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Sword";
+            b2.innerHTML = "Convince Guard";
+            b3.innerHTML = "Go Through Window";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
         function enterGate(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Poison Drink";
+            b2.innerHTML = "Enter House";
+            b3.innerHTML = "Follow Orders";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
         }
         function noEnterGate(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function poisonDrink(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function goToHouse(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function followOrders(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
         function turnedIn(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
 
         function mountain(){
@@ -359,6 +554,84 @@
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
+            b4.style.display = "none";
+        }
+        function enterGate1(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Poison Drink";
+            b2.innerHTML = "Enter House";
+            b3.innerHTML = "Follow Orders";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+        function noEnterGate1(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function fellTower1(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Break Window";
+            b2.innerHTML = "Knock on Door";
+            b3.innerHTML = "Use Key";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            if (hasKey){
+                b3.style.display = "block";
+            }
+            else if (!hasKey){
+                b3.style.display = "none";
+            }
+            b4.style.display = "none";
+        }
+        function burnTower1(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Break Window";
+            b2.innerHTML = "Knock on Door";
+            b3.innerHTML = "Use Key";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            if (hasKey){
+                b3.style.display = "block";
+            }
+            else if (!hasKey){
+                b3.style.display = "none";
+            }
+            b4.style.display = "none";
+        }
+        function useWolves(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
             b4.style.display = "none";
         }
 
@@ -435,6 +708,7 @@
         }
 
         function decline(){
+            declined = true;
             pic.src = "";
             ptxt1.innerHTML = "";
             ptxt2.innerHTML = "";
@@ -504,6 +778,16 @@
             b4.style.display = "none";
         }
         function playDeadSuccess(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
         function kickScream(){
             pic.src = "";
@@ -532,6 +816,16 @@
             b4.style.display = "none";
         }
         function convinceGuardSuccess(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
 
         function backToTown(){
@@ -558,7 +852,45 @@
             }
             b4.style.display = "none";
         }
-
+        function escape(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Grab and Run";
+            b2.innerHTML = "Disguise";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function grabRun(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try Again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function disguise(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Would you like to play again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
         //state machine
         function bclick(button){
             if (state == "start"){
@@ -628,7 +960,7 @@
                     state = "threatenMan2";
                 }
             }
-            else if (state == searchMan){
+            else if (state == "searchMan"){
                 if (button == 1){
                     backToTown();
                     state = "backToTown";
@@ -638,6 +970,15 @@
                 if (button == 1){
                     forest();
                     state = "forest";
+                }
+            }
+            else if (state == "threatenMan1"){
+                if (button == 1){
+                    startGame();
+                }
+                else if (button == 2){
+                    start();
+                    state = "start";
                 }
             }
             else if (state == "threatenMan2"){
@@ -666,8 +1007,8 @@
             }
             else if (state == "saveMerchants"){
                 if (button == 1){
-                    backToTown();
-                    state = "backToTown";
+                    forest();
+                    state = "forest";
                 }
             }
             else if (state == "landslide"){
@@ -676,8 +1017,26 @@
                     state = "backToTown";
                 }
             }
-            else if (state == "woldChase"){
-                if (button == 1){
+            else if (state == "wolfChase"){
+                if (button == 1 && hasEmblem){
+                    enterGate1();
+                    state = "enterGate1";
+                }
+                else if (button == 1 && !hasEmblem){
+                    noEnterGate1();
+                    state = "gameOver";
+                }
+                else if (button == 2 && isSamurai){
+                    fellTower1();
+                    state = "fellTower1";
+                }
+                else if (button == 2 && !isSamurai){
+                    burnTower1();
+                    state = "burnTower1";
+                }
+                else if (button == 3){
+                    useWolves();
+                    state = "gameOver";
                 }
             }
             else if (state == "temple"){
@@ -740,6 +1099,65 @@
                     state = "backToTown";
                 }
             }
+            else if (state == "felltower" || state == "felltower1" || 
+                     state == "burntower" || state == "burnTower1"){
+                if (button == 1){
+                    breakWindow();
+                    state = "breakWindow";
+                }
+                else if (button == 2){
+                    knockDoor();
+                    state = "gameOver";
+                }
+                else if (button == 3){
+                    useKey();
+                    state == "escape";
+                }
+            }
+            else if (state == "wait"){
+                if (button == 1){
+                    houseGuard();
+                    state = "houseGuard";
+                }
+            }
+            else if (state == "enterGate"){
+                if (button == 1){
+                    poisonDrink();
+                    state == "poisonDrink";
+                }
+                else if (button == 2){
+                    goToHouse();
+                    state == "goToHouse";
+                }
+                else if (button == 3){
+                    followOrders();
+                    state == "followOrders"
+                }
+            }
+            else if (state == "noEnterGate"){
+                if (button == 1){
+                    captured();
+                    state = "captured";
+                }
+            }
+            else if (state == "poisonDrink"){
+                if (button == 1){
+                    captured();
+                    state = "captured";
+                }
+            }
+            else if (state == "goToHouse"){
+                if (button == 1){
+                    houseGuard();
+                    state = "housGuard";
+                }
+            }
+            else if (state == "followOrders"){
+                if (button == 1){
+                    houseGuard();
+                    state = "houseGuard";
+                }
+            }
             else if (state == "decline"){
                 if (button == 1){
                     captured();
@@ -765,18 +1183,30 @@
                 }
                 else if (button == 2 && !playedDead){
                     playDeadSuccess();
-                    state = "forest";
+                    state = "playDeadSuccess";
                 }
                 else if (button == 3){
                     kickScream();
                     state = "gameOver";
                 }
-                else if (button == 4 && capturedNum > 1){
+                else if (button == 4 && capturedNum > 1 || !hasEmblem){
                     convinceGuardFail();
                     state = "gameOver";
                 }
-                else if (button == 4 && capturedNum <= 1){
+                else if (button == 4 && capturedNum <= 1 && hasEmblem){
                     convinceGuardSuccess();
+                    state = "convinceGuardSuccess";
+                }
+            }
+            else if (state == "playDeadSuccess"){
+                if (button == 1){
+                    forest();
+                    state = "forest";
+                }
+            }
+            else if (state == "convinceGuardSuccess"){
+                if (button == 1){
+                    forest();
                     state = "forest";
                 }
             }
@@ -801,6 +1231,16 @@
                 else if (button == 3){
                     temple();
                     state = "temple";
+                }
+            }
+            else if (state == "escape"){
+                if (button == 1){
+                    grabRun();
+                    state = "gameOver";
+                }
+                else if (button == 2){
+                    disguise();
+                    state = "gameOver";
                 }
             }
             return false;

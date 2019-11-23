@@ -13,6 +13,7 @@
             left:0px;
             right:0px;
             background-color:dimgray;
+            z-index:1;
         }
 
         #leftpane{
@@ -39,6 +40,7 @@
             align-items:center;
             justify-content:center;
             padding:8px;
+            z-index:1;
         }
 
         #storyimg{
@@ -120,7 +122,7 @@
         var b4 = document.getElementById("button4");
         var isSamurai = false;
         var declined = false;
-        var manSpared = true;
+        var manSpared = false;
         var beenToMountain = false;
         var beenToTemple = false;
         var travelersSaved = false;
@@ -159,7 +161,7 @@
         }
         function choosePath(){
             pic.src = "";
-            ptxt1.innerHTML = "Choose a path:";
+            ptxt1.innerHTML = "Choose your path...";
             ptxt2.innerHTML = "";
             ptxt3.innerHTML = "";
             ptxt4.innerHTML = "";
@@ -173,14 +175,14 @@
         function intro(){
             pic.src = "images/stickman.png";
             if (isSamurai){
-                ptxt1.innerHTML = "intro intro samurai intro";
+                ptxt1.innerHTML = "You are Joe, a mighty samurai living in feudal Japan. You lost your status due to false accusations, and you're looking for a way to get some money.";
             }
             else{
-                ptxt1.innerHTML = "intro intro farmer intro";
+                ptxt1.innerHTML = "You are Joe, a rice farmer who lives in feudal Japan. The winter has been rough, and you desparately need money to feed your family.";
             }
-            ptxt2.innerHTML = "";
+            ptxt2.innerHTML = "One day, while walking along the streets, you come across a flyer with a bounty for the local gang; the flyer says they're offering 20,000 yen.";
             ptxt3.innerHTML = "";
-            ptxt4.innerHTML = "";
+            ptxt4.innerHTML = "Do you want to take the bounty?";
             b1.innerHTML = "Yes";
             b2.innerHTML = "No";
             b1.style.display = "block";
@@ -190,10 +192,10 @@
         }
         function town(){
             pic.src = "";
-            ptxt1.innerHTML = "";
+            ptxt1.innerHTML = "You decide to take the bounty and enter the main village. To the left side of the village is where the marketplace and town quare are located; to the right are the houses where the merchants and other villagers live.";
             ptxt2.innerHTML = "";
             ptxt3.innerHTML = "";
-            ptxt4.innerHTML = "";
+            ptxt4.innerHTML = "Which side do you visit in order to find a lead?";
             b1.innerHTML = "Left Side";
             b2.innerHTML = "Right Side";
             b1.style.display = "block";
@@ -203,10 +205,10 @@
         }
         function leftSide(){
             pic.src = "";
-            ptxt1.innerHTML = "";
-            ptxt2.innerHTML = "";
+            ptxt1.innerHTML = "Walking around the village square and marketplace and talking to people have given you knowledge of some rumors surrounding the gang's whereabouts.";
+            ptxt2.innerHTML = "One rumor says that the gang hides deep in the forest; another says they have a camp up in the mountain; a third rumor suggest that they inhabit the groud of the old abandoned temple.";
             ptxt3.innerHTML = "";
-            ptxt4.innerHTML = "";
+            ptxt4.innerHTML = "Where do you go to look?";
             b1.innerHTML = "Forest";
             b2.innerHTML = "Mountain";
             b3.innerHTML = "Temple";
@@ -285,14 +287,14 @@
         function forest(){
             pic.src = "";
             if (capturedNum == 0){
-                ptxt1.innerHTML = "";
+                ptxt1.innerHTML = "You pack your things and head into the thick of the forest. After a while of searching, you successfully locate the gang's hideout.";
             }
             else if (capturedNum > 0){
                 ptxt1.innerHTML = "";
             }
             ptxt2.innerHTML = "";
             ptxt3.innerHTML = "";
-            ptxt4.innerHTML = "";
+            ptxt4.innerHTML = "Hiding behind a tree, you see two guards, one on a guard tower, and the other standing in front of the camp's walls. How should you get inside?";
             b1.innerHTML = "Cause Havoc";
             b2.innerHTML = "Wait";
             b3.innerHTML = "Walk Through";
@@ -327,6 +329,75 @@
             b4.style.display = "none";
         }
         function breakWindow(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            if (isSamurai){
+                b1.innerHTML = "Sword";
+            }
+            else if (!isSamurai){
+                b1.innerHTML = "Hat";
+            }
+            b2.innerHTML = "Fight Barehanded";
+            b3.innerHTML = "Mercy";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+        }
+        function leaderSword(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Would you like to play again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function leaderHat(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function barehanded(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function mercy(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Would you like to play again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
         function knockDoor(){
             pic.src = "";
@@ -353,8 +424,6 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-        function fightLeader(){
-        }
         function burnTower(){
             pic.src = "";
             ptxt1.innerHTML = "";
@@ -376,34 +445,108 @@
         }
         function wait(){
             pic.src = "";
-            ptxt1.innerHTML = "";
+            ptxt1.innerHTML = "You decide that the safest option would be to wait until night. After several hours of waiting, the moon rises, and you successfully manage to sneak into the camp under a veil of darkness.";
             ptxt2.innerHTML = "";
             ptxt3.innerHTML = "";
             ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function houseGuard(){
+            pic.src = "";
+            ptxt1.innerHTML = "As you sneak around the camp, you find the gang leader's hut and begin to approach it. However, as you get closer, you notice a guard guarding the entrance.";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "How do you get past the guard?";
             b1.innerHTML = "Sword";
             b2.innerHTML = "Convince Guard";
-            b3.innerHTML = "Sneak Through Window";
+            b3.innerHTML = "Go Through Window";
             if (isSamurai){
                 b1.style.display = "block";
             }
             else if (!isSamurai){
-                b1.style.display = "block";
+                b1.style.display = "none";
             }
             b2.style.display = "block";
             b3.style.display = "block";
             b4.style.display = "none";
         }
-        function houseGuard(){
+        function guardSword(){
             pic.src = "";
             ptxt1.innerHTML = "";
             ptxt2.innerHTML = "";
             ptxt3.innerHTML = "";
             ptxt4.innerHTML = "";
-            b1.innerHTML = "Sword";
-            b2.innerHTML = "Convince Guard";
-            b3.innerHTML = "Go Through Window";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function guardTrick(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function throughWindow(){
+            pic.src = "";
+            ptxt1.innerHTML = "You see a window on the side of the hut and crawl through it. Hearing suspicious noises, the guard begins to walk to the side of the hut to see what's going on.";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Your only option is to hide, but where?";
+            b1.innerHTML = "On Ceiling";
+            b2.innerHTML = "Under Table";
+            b3.innerHTML = "On Bed";
             b1.style.display = "block";
             b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+        }
+        function onCeiling(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function underTable(){
+            pic.src = "";
+            ptxt1.innerHTML = "";
+            ptxt2.innerHTML = "";
+            ptxt3.innerHTML = "";
+            ptxt4.innerHTML = "Try again?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        function onBed(){
+            pic.src = "";
+            ptxt1.innerHTML = "You have no idea why you thought this would be a good idea, but it was. This was the right choice. Good job.";
+            ptxt2.innerHTML = "Quickly, you quiety run over to the leader's bed and plop down beside him. As the guard peers through the window, he sees you next to the guard and for some reason assumes that the leader of a criminal gang was just having a sleepover.";
+            ptxt3.innerHTML = "As the guard goes back to his post, you grab a nearby weapon and finish the leader. Your mission is accomplished, now you just need to find a way to get his body back to the village.";
+            ptxt4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
             b3.style.display = "none";
             b4.style.display = "none";
         }
@@ -419,7 +562,7 @@
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
-            b4.style.display = "block";
+            b4.style.display = "none";
         }
         function noEnterGate(){
             pic.src = "";
@@ -854,10 +997,10 @@
         }
         function escape(){
             pic.src = "";
-            ptxt1.innerHTML = "";
+            ptxt1.innerHTML = "You think about your options, and you come up with two possible solutions: you can either try to pretend to be the leader, or you can take the body and book it out of there.";
             ptxt2.innerHTML = "";
             ptxt3.innerHTML = "";
-            ptxt4.innerHTML = "";
+            ptxt4.innerHTML = "It's do or die now. What are you going to do?";
             b1.innerHTML = "Grab and Run";
             b2.innerHTML = "Disguise";
             b1.style.display = "block";
@@ -1099,8 +1242,8 @@
                     state = "backToTown";
                 }
             }
-            else if (state == "felltower" || state == "felltower1" || 
-                     state == "burntower" || state == "burnTower1"){
+            else if (state == "fellTower" || state == "fellTower1" || 
+                     state == "burnTower" || state == "burnTower1"){
                 if (button == 1){
                     breakWindow();
                     state = "breakWindow";
@@ -1112,6 +1255,24 @@
                 else if (button == 3){
                     useKey();
                     state == "escape";
+                }
+            }
+            else if (state == "breakWindow"){
+                if (button == 1 && isSamurai){
+                    leaderSword();
+                    state = "gameOver";
+                }
+                else if (button == 1 && !isSamurai){
+                    leaderHat();
+                    state = "gameOver";
+                }
+                else if (button == 3){
+                    barehanded();
+                    state = "gameOver";
+                }
+                else if (button == 4){
+                    mercy();
+                    state = "gameOver";
                 }
             }
             else if (state == "wait"){
@@ -1241,6 +1402,52 @@
                 else if (button == 2){
                     disguise();
                     state = "gameOver";
+                }
+            }
+            else if (state == "houseGuard"){
+                if (button == 1){
+                    guardSword();
+                    state = "guardSword";
+                }
+                else if (button == 2){
+                    guardTrick();
+                    state = "guardTrick";
+                }
+                else if (button == 3){
+                    throughWindow();
+                    state = "throughWindow";
+                }
+            }
+            else if (state == "guardSword"){
+                if (button == 1){
+                    escape();
+                    state = "escape";
+                }
+            }
+            else if (state == "guardTrick"){
+                if (button == 1){
+                    captured();
+                    state = "captured";
+                }
+            }
+            else if (state == "throughWindow"){
+                if (button == 1){
+                    onCeiling();
+                    state = "gameOver";
+                }
+                else if (button == 2){
+                    underTable();
+                    state = "gameOver";
+                }
+                else if (button == 3){
+                    onBed();
+                    state = "onBed";
+                }
+            }
+            else if (state == "onBed"){
+                if (button == 1){
+                    escape();
+                    state = "escape";
                 }
             }
             return false;

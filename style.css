@@ -62,3 +62,8 @@ body{
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 32px;
 }
+.generic-small{
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 24px;
+}
